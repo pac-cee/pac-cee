@@ -1,4 +1,4 @@
- Hi there! 👋 I'm @pac-cee 
+ Hi there! 👋 I'm @pacific
 
 🔭 About Me:
 I'm passionate about merging technology with creativity, particularly through backend development, large language models (LLM), machine learning (ML), and artificial intelligence (AI). My interests also span football, music, and the endless possibilities in programming.
