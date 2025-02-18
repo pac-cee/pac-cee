@@ -18,7 +18,7 @@ tel: +250791377973
 he/him
 
 ⚡ Fun Fact: 
-Frontend development is quite me thing – I’m the backend magic!
+Football helps me code better 😄
 
 This README is ✨ special ✨ as it reflects my journey in technology and innovation. Thanks for stopping by! 
 
