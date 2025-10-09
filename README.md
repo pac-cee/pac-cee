@@ -35,18 +35,6 @@ I'm passionate about using technology to help and improve the world. My core str
 ![](https://github-profile-trophy.vercel.app/?username=pac-cee&theme=radical&no-frame=false&no-bg=true&margin-w=4)
 
 
-### 🔝 Top Contributed Repo
-![](https://github-contributor-stats.vercel.app/api?username=pac-cee&limit=5&theme=dark&combine_all_yearly_contributions=true)
-
----
-[![](https://visitcount.itsvg.in/api?id=pac-cee&icon=6&color=1)](https://visitcount.itsvg.in)
-
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
-
-
-
-This README is ✨ special ✨ as it reflects my journey in technology and innovation. Thanks for stopping by! 
-
 <!---
 pac-cee/pac-cee is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 You can click the Preview link to take a look at your changes.
