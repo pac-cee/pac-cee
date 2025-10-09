@@ -3,8 +3,6 @@
 🔭 About Me:
 I'm passionate about using technology to help and improve the world. My core strength is continuous improvement, always seeking better solutions through innovation. I specialize in backend development, AI/ML, and building scalable systems that make a meaningful impact.
 
-📫 Contact Me:
- [pacitekno12@gmail.com](mailto:pacitekno12@gmail.com).
 
 ## 🌐 Socials:
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/pacifiquebakundukize) <br>[![Reddit](https://img.shields.io/badge/Reddit-%23FF4500.svg?logo=Reddit&logoColor=white)](https://reddit.com/user/paccee)<br> [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:pacitekno12@gmail.com) 
