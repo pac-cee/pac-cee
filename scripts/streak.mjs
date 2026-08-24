@@ -18,7 +18,11 @@ async function gql(query, variables = {}) {
 }
 
 // Fetch every contribution day since account creation (calendar API caps at 1y per query)
-const { user } = await gql(`query { user(login: "${LOGIN}") { createdAt } }`);
+const { user } = await gql(
+  `query { user(login: "${LOGIN}") { createdAt repositories(ownerAffiliations: OWNER) { totalCount totalDiskUsage } } }`,
+);
+const repoCount = user.repositories.totalCount;
+const codeGB = (user.repositories.totalDiskUsage / 1024 / 1024).toFixed(1);
 const days = new Map();
 const now = new Date();
 for (let from = new Date(user.createdAt); from < now; ) {
@@ -54,17 +58,6 @@ for (const [date, count] of sorted) {
   } else run = { len: 0, start: null };
 }
 
-// Current streak (a zero for today doesn't break it — the day isn't over)
-let current = { len: 0, start: null, end: null };
-const back = [...sorted].reverse();
-let i = 0;
-if (back[0]?.[0] === today && back[0][1] === 0) i = 1;
-for (; i < back.length && back[i][1] > 0; i++) {
-  if (!current.len) current.end = back[i][0];
-  current.len++;
-  current.start = back[i][0];
-}
-
 const fmt = (d, year = false) =>
   new Date(`${d}T00:00:00Z`).toLocaleDateString("en-US", {
     month: "short",
@@ -74,10 +67,18 @@ const fmt = (d, year = false) =>
   });
 const n = (x) => x.toLocaleString("en-US");
 
+// Uptime since first contribution, in years and months
+const start = new Date(`${firstActive}T00:00:00Z`);
+let months = (now.getUTCFullYear() - start.getUTCFullYear()) * 12 + (now.getUTCMonth() - start.getUTCMonth());
+const years = Math.floor(months / 12);
+months %= 12;
+const uptime = [years && `${years} year${years > 1 ? "s" : ""}`, months && `${months} month${months > 1 ? "s" : ""}`].filter(Boolean).join(", ");
+
 const lines = [
-  { t: [["#e6edf3", ` up ${n(total)} contributions`], ["#9198a1", `  (since ${fmt(firstActive, true)})`]] },
-  { t: [["#e6edf3", " current streak  "], ["#39d353", `${current.len} days`, true], ["#9198a1", `   ${fmt(current.start)} → ${fmt(current.end)}`]] },
+  { t: [["#e6edf3", ` up ${uptime}`], ["#9198a1", ` — building since ${fmt(firstActive, true)}`]] },
+  { t: [["#e6edf3", " contributions   "], ["#39d353", `${n(total)}`, true], ["#9198a1", "  and counting"]] },
   { t: [["#e6edf3", " longest streak  "], ["#39d353", `${longest.len} days`, true], ["#9198a1", `  ${fmt(longest.start, true)} → ${fmt(longest.end, true)}`]] },
+  { t: [["#e6edf3", " shipped         "], ["#39d353", `${n(repoCount)} repos`, true], ["#9198a1", ` · ${codeGB} GB of code`]] },
 ];
 
 const W = 880, HEADER = 38, LH = 30, PAD = 26;
@@ -114,4 +115,4 @@ ${body}
 </svg>`;
 
 writeFileSync("streak.terminal.svg", svg);
-console.log(`streak.terminal.svg written — total=${total} current=${current.len} longest=${longest.len}`);
+console.log(`streak.terminal.svg written — total=${total} longest=${longest.len} repos=${repoCount} code=${codeGB}GB`);
