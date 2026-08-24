@@ -1,4 +1,5 @@
-<!-- pac-cee/pac-cee — profile README. Rendered as a terminal session. -->
+<!-- pac-cee/pac-cee — profile README, rendered as a terminal session.
+     metrics.terminal.svg is regenerated daily by .github/workflows/metrics.yml -->
 
 ```console
 pac@github:~ $ whoami
@@ -6,16 +7,17 @@ Pacifique — I love building.
 ```
 
 ```console
-pac@github:~ $ ./stats --live
-fetching real data from github.com/pac-cee ...
+pac@github:~ $ ssh pac-cee@github.com
+Connected. Stats below are generated daily from real activity — no third-party servers.
 ```
 
-<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=pac-cee&theme=github_dark" width="100%" alt="profile summary — contributions, repos, joined date" />
+<img src="./metrics.terminal.svg" alt="live GitHub metrics — commits, PRs, repos, languages, contribution calendar" />
 
-<p>
-  <img src="https://streak-stats.demolab.com/?user=pac-cee&theme=github-dark-blue&hide_border=true&background=00000000" width="49%" alt="contribution streak" />
-  <img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=pac-cee&theme=github_dark" width="49%" alt="languages by real commits" />
-</p>
+```console
+pac@github:~ $ uptime
+```
+
+<img src="https://streak-stats.demolab.com/?user=pac-cee&theme=github-dark-blue&hide_border=true&background=00000000" alt="contribution streak" />
 
 ```console
 pac@github:~ $ cat ~/.contact
