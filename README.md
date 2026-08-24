@@ -13,17 +13,13 @@ Connected. Stats below are generated daily from real activity — no third-party
 
 <img src="./metrics.terminal.svg" width="100%" alt="live GitHub metrics — commits, PRs, repos, languages, contribution calendar" />
 
-```console
-pac@github:~ $ uptime
-```
+<img src="./streak.terminal.svg" width="100%" alt="contribution streak — total, current and longest" />
 
-<img src="https://streak-stats.demolab.com/?user=pac-cee&hide_border=true&background=00000000&ring=39d353&fire=39d353&currStreakNum=f0f6fc&sideNums=39d353&currStreakLabel=39d353&sideLabels=f0f6fc&dates=9198a1" width="100%" alt="contribution streak" />
-
-```console
-pac@github:~ $ cat ~/.contact
-```
-
-> `x` → [x.com/pacitekno12](https://x.com/pacitekno12) &nbsp;·&nbsp; `linkedin` → [in/pacifique](https://www.linkedin.com/in/pacifique-a113663a6/) &nbsp;·&nbsp; `email` → [pacitekno12@gmail.com](mailto:pacitekno12@gmail.com)
+<p>
+  <a href="https://x.com/pacitekno12"><img src="./assets/contact-x.svg" width="32.5%" alt="X — @pacitekno12" /></a>
+  <a href="https://www.linkedin.com/in/pacifique-a113663a6/"><img src="./assets/contact-linkedin.svg" width="32.5%" alt="LinkedIn — in/pacifique" /></a>
+  <a href="mailto:pacitekno12@gmail.com"><img src="./assets/contact-email.svg" width="32.5%" alt="Email — pacitekno12@gmail.com" /></a>
+</p>
 
 ```console
 pac@github:~ $ exit

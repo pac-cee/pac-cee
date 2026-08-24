@@ -17,6 +17,8 @@ jobs:
   metrics:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v4
+
       - uses: lowlighter/metrics@latest
         with:
           token: ${{ secrets.METRICS_TOKEN }}
@@ -34,3 +36,28 @@ jobs:
           plugin_languages_details: bytes-size, percentage
           plugin_languages_indepth: yes
           plugin_languages_analysis_timeout: 15
+          # Restyle the Ubuntu terminal into a macOS one (GitHub-dark body, traffic lights on the left)
+          extras_css: |
+            pre { background: #161b22 !important; }
+            .header { flex-direction: row-reverse; background: #21262d !important; }
+            .buttons { flex-direction: row-reverse; }
+            .button { color: transparent !important; text-shadow: none !important; margin: 0 6px 0 0 !important; }
+            .buttons .button:nth-child(1) { background: #28c840 !important; }
+            .buttons .button:nth-child(2) { background: #febc2e !important; }
+            .button.exit { background: #ff5f57 !important; }
+
+      - name: Generate streak card
+        run: node scripts/streak.mjs
+        env:
+          GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
+
+      - name: Commit streak card
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git pull --rebase --autostash origin main
+          git add streak.terminal.svg
+          if ! git diff --cached --quiet; then
+            git commit -m "chore: update streak card"
+            git push origin main
+          fi
