@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="480" height="519" class="">
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="626" class="">
   
 
   <defs><style>@font-face {
@@ -50,7 +50,13 @@
 -r--  <b>    0</b>  watchers
 dr-x  <b>    0</b>  packages
 </div>
-<div class="stdin"><span class="ps1-path">pac-cee@metrics</span>:<span class="ps1-location">~</span># locale</div><div class="stdout"></div>
+<div class="stdin"><span class="ps1-path">pac-cee@metrics</span>:<span class="ps1-location">~</span># locale</div><div class="stdout"><b>GO          </b> [############        ] 57.72%
+<b>TSX         </b> [######              ] 26.13%
+<b>TYPESCRIPT  </b> [##                  ] 5.15 %
+<b>CSS         </b> [#                   ] 4.33 %
+<b>HTML        </b> [#                   ] 4.17 %
+<b>JAVASCRIPT  </b> [#                   ] 2.50 %
+</div>
 <div class="stdin"><span class="ps1-path">pac-cee@metrics</span>:<span class="ps1-location">~</span># ncal -MB5</div><div class="stdout"><div class="isocalendar">
             <svg version="1.1" xmlns="http://www.w3.org/2000/svg" style="margin-top: -130px;" viewBox="0,0 480,170">
               
