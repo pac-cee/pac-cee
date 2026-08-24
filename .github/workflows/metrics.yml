@@ -23,6 +23,7 @@ jobs:
         with:
           token: ${{ secrets.METRICS_TOKEN }}
           user: pac-cee
+          output_action: none
           template: terminal
           filename: metrics.terminal.svg
           base: header, activity
@@ -46,18 +47,24 @@ jobs:
             .buttons .button:nth-child(2) { background: #febc2e !important; }
             .button.exit { background: #ff5f57 !important; }
 
-      - name: Generate streak card
+      - name: Generate uptime card
         run: node scripts/streak.mjs
         env:
           GH_TOKEN: ${{ secrets.METRICS_TOKEN }}
 
-      - name: Commit streak card
+      - name: Trim volatile calendar footer
+        run: |
+          sudo cp /metrics_renders/metrics.terminal.svg metrics.terminal.svg
+          sudo chown "$(id -u):$(id -g)" metrics.terminal.svg
+          sed -i '/consecutive days with commits/d' metrics.terminal.svg
+
+      - name: Commit cards
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git pull --rebase --autostash origin main
-          git add streak.terminal.svg
+          git add metrics.terminal.svg streak.terminal.svg
           if ! git diff --cached --quiet; then
-            git commit -m "chore: update streak card"
+            git commit -m "chore: update stats cards"
             git push origin main
           fi
