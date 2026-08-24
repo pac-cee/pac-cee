@@ -11,13 +11,13 @@ pac@github:~ $ ssh pac-cee@github.com
 Connected. Stats below are generated daily from real activity — no third-party servers.
 ```
 
-<img src="./metrics.terminal.svg" alt="live GitHub metrics — commits, PRs, repos, languages, contribution calendar" />
+<img src="./metrics.terminal.svg" width="100%" alt="live GitHub metrics — commits, PRs, repos, languages, contribution calendar" />
 
 ```console
 pac@github:~ $ uptime
 ```
 
-<img src="https://streak-stats.demolab.com/?user=pac-cee&theme=github-dark-blue&hide_border=true&background=00000000" alt="contribution streak" />
+<img src="https://streak-stats.demolab.com/?user=pac-cee&hide_border=true&background=00000000&ring=39d353&fire=39d353&currStreakNum=f0f6fc&sideNums=39d353&currStreakLabel=39d353&sideLabels=f0f6fc&dates=9198a1" width="100%" alt="contribution streak" />
 
 ```console
 pac@github:~ $ cat ~/.contact
